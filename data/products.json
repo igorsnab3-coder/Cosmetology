@@ -1,0 +1,58 @@
+[
+  {
+    "id": "p1",
+    "type": "product",
+    "name": "Сыворотка с гиалуроновой кислотой",
+    "description": "Интенсивное увлажнение и восстановление гидробаланса кожи.",
+    "price": 3200,
+    "image": "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "p2",
+    "type": "product",
+    "name": "Крем увлажняющий для лица",
+    "description": "Лёгкая текстура для ежедневного ухода и мягкого сияния.",
+    "price": 2800,
+    "image": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "p3",
+    "type": "product",
+    "name": "Маска восстанавливающая",
+    "description": "Успокаивает, питает и возвращает коже комфорт после процедур.",
+    "price": 1900,
+    "image": "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "p4",
+    "type": "product",
+    "name": "Тоник для чувствительной кожи",
+    "description": "Мягкое очищение без стянутости, подготовка к сыворотке и крему.",
+    "price": 1500,
+    "image": "https://images.unsplash.com/photo-1571875257727-256c39da42af?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "p5",
+    "type": "product",
+    "name": "Набор домашнего ухода",
+    "description": "Базовый набор: очищение, увлажнение и защита кожи дома.",
+    "price": 4500,
+    "image": "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "p6",
+    "type": "product",
+    "name": "SPF-крем ежедневный",
+    "description": "Защита от солнца для ежедневного использования, лёгкое покрытие.",
+    "price": 2100,
+    "image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "s-mesotherapy",
+    "type": "service",
+    "name": "Мезотерапия",
+    "description": "Точечное введение активных компонентов для тонуса, цвета и увлажнённости кожи.",
+    "price": 5000,
+    "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80"
+  }
+]

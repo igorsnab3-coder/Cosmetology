@@ -1,0 +1,18 @@
+{
+  "name": "yana-pdf",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "pdfmake": "^0.2.18",
+    "puppeteer": "^24.2.0"
+  }
+}

@@ -1,0 +1,52 @@
+services:
+  yana-clinic:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: yana-clinic:latest
+    container_name: yana-clinic
+    # Reap zombies + forward stop signals to the entrypoint process tree
+    init: true
+    # Chromium/Puppeteer is more stable with a larger /dev/shm
+    shm_size: "256mb"
+    stop_grace_period: 25s
+    ports:
+      - "5500:5500"
+    environment:
+      JARVIS_ROOT: /app
+      JARVIS_DATA_DIR: /app/data
+      JARVIS_SEED_DIR: /app/data-seed
+      JARVIS_ENV_FILE: /app/.env
+      JARVIS_STATIC_ROOT: /app/dist
+      JARVIS_DB_FILE: /app/data/yana.sqlite
+      JARVIS_HOST: 127.0.0.1
+      JARVIS_GATEWAY_HOST: 0.0.0.0
+      PORT: "5500"
+      PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium
+      PUPPETEER_SKIP_DOWNLOAD: "true"
+    volumes:
+      # Persistent SQLite DB / catalog / orders inside Docker volume
+      - yana_data:/app/data
+      # Secrets: default = Windows LocalAppData YanaClinic\.env
+      # Override: $env:DOCKER_ENV_FILE = "C:\path\to\.env"
+      # Fallback example: copy secrets to .\.env.docker then set DOCKER_ENV_FILE
+      - type: bind
+        source: ${DOCKER_ENV_FILE:-${LOCALAPPDATA}/YanaClinic/.env}
+        target: /app/.env
+        read_only: true
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:5500/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  yana_data:

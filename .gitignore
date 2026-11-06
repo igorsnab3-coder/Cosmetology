@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env
+data/telegram_chat_id.txt
+data/ai-core.pid
+data/db-core.pid
+data/pdf-core.pid
+data/DATA_LOCATION.txt
+*.sqlite
+*.sqlite.bak
+*.sqlite-journal
+*.sqlite.tmp
