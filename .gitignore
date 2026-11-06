@@ -1,12 +1,36 @@
+# Dependencies & build
 node_modules/
 dist/
+.vite
+**/.vite/
+coverage
+
+# Secrets / env (keep examples)
 .env
-data/telegram_chat_id.txt
-data/ai-core.pid
-data/db-core.pid
-data/pdf-core.pid
+.env.*
+!.env.example
+!.env.docker.example
+
+# Runtime data & caches (local machine)
+data/*.pid
 data/DATA_LOCATION.txt
+data/telegram_chat_id.txt
+data/telegram_outbox.jsonl
+data/telegram_notified.json
+data/orders.json
+data/*.log
+pdf/.cache
+
+# SQLite
 *.sqlite
 *.sqlite.bak
 *.sqlite-journal
 *.sqlite.tmp
+*.sqlite-*
+
+# Logs & OS junk
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+Desktop.ini
